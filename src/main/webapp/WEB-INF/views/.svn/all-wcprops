@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/dp/!svn/ver/823/gluon_web/trunk/src/main/webapp/WEB-INF/views
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repos/dp/!svn/ver/814/gluon_web/trunk/src/main/webapp/WEB-INF/views/login.jsp
+END
+importTable.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/repos/dp/!svn/ver/815/gluon_web/trunk/src/main/webapp/WEB-INF/views/importTable.jsp
+END
+home.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/dp/!svn/ver/823/gluon_web/trunk/src/main/webapp/WEB-INF/views/home.jsp
+END
+test.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/dp/!svn/ver/814/gluon_web/trunk/src/main/webapp/WEB-INF/views/test.jsp
+END
+boot.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/dp/!svn/ver/814/gluon_web/trunk/src/main/webapp/WEB-INF/views/boot.jsp
+END

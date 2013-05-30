@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Home</title>
+    <link href="resources/css/bootstrap.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+    <!--
+        .toppad {
+            position: relative;
+            padding-top: 10px;
+            padding-left: 40px;
+        }
+        .paddTop {
+            position: relative;
+            padding-top: 40px;
+        }
+        
+		.bs-docs-example {
+            position: relative;
+            margin: 15px 0;
+            padding: 39px 19px 14px;
+            *padding-top: 19px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+		}
+    //-->
+    </style>
+    <script src="resources/js/jquery-1.9.0.js"></script>
+    <script src="resources/js/bootstrap.js"></script>
+	<script>
+    $(document).ready(function(){
+
+        $("#queryBtn").click(function() {
+            $(location).attr('href', 'http://20.20.20.27:42000');
+        });
+
+        
+        $("#importBtn").click(function() {
+        	 window.open('importTable');
+             
+        });
+        $("#login").click(function() {
+            console.log("click login");
+            
+            
+            var result = $.ajax({
+                url: "/gluon_web/login?user=" + $('#inputId').val(),
+                dataType:"json",
+                async: false});
+            
+            console.log("result:" + result);
+            var resultJson = eval( "(" + result.responseText + ")");
+            
+            console.log("result:" + resultJson.user);   
+            $('#userinfo').html("<p>'" +resultJson.user + "' now logged-in</p>"
+            		      + "<p> at " +resultJson.time + " </p>");
+            
+            $('#myModal').modal('hide');
+            $("#loginBtn").hide();
+            $("#logoutBtn").show();
+            return false;
+            
+       });
+        $("#logoutBtn").click(function() {
+            console.log("click login");
+            
+            var result = $.ajax({
+                url: "/gluon_web/logout?user=" + $('#inputId').val(),
+                dataType:"json",
+                async: false});
+            
+            console.log("result:" + result);
+            var resultJson = eval( "(" + result.responseText + ")");
+            
+            
+            console.log("result:" + resultJson.user);   
+            $('#userinfo').html("<p>'" +resultJson.user + "' now logged-out</p>" 
+            + "<p> at " +resultJson.time + " </p>");
+            
+            $("#logoutBtn").hide();
+            $("#loginBtn").show();
+            return false;
+            
+       });
+        
+        $("#logoutBtn").hide();
+    });
+	</script>
+</head>
+
+<body>
+<div class="page-header">
+    <h1 class="toppad">Gluon <small>Anyone can map-reduce</small></h1>
+</div>
+<div class="row">
+    <div class="span9"></div>
+    
+    
+    <div class="span2">
+        <!-- Button to trigger modal -->
+        <div id="loginBtn" >
+            <a href="#myModal"  role="button" class="btn  btn-primary btn-large" data-toggle="modal">login</a>
+        </div>
+        <button  id="logoutBtn" class="btn btn-primary  btn-large">logout</button>
+        
+    </div>
+</div>
+<div class="container" style="position: relative;padding-top: 50px;">
+  <div class="row-fluid">
+    <div class="span3" id="userinfo">
+      
+    </div>
+    <div class="span3">
+      <!--Body content-->
+      cluster : jupiter <br>
+      server : total 5 <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+<div class="paddTop">
+	<div class="row">
+	    <div class="span2 offset1">
+	        <button class="btn btn-primary btn-block btn-large" type="button">Workflow</button>
+	    </div>
+	    
+	    <div class="span2">
+	        <button class="btn btn-primary btn-block btn-large" id="importBtn">Import</button>
+	    </div>
+	    <div class="span2">
+	        <button class="btn btn-primary btn-block btn-large">Export</button>
+	    </div>
+	</div>
+	<div class="row" style="position: relative;padding-top: 30px;">
+        <div class="span2 offset1">
+            <button class="btn btn-primary btn-block btn-large">OLTP Service</button>
+        </div>
+        <div class="span2">
+            <button id="queryBtn" class="btn btn-primary btn-block btn-large" type="button">Query</button>
+        </div>
+        <div class="span2">
+            <button class="btn btn-primary btn-block btn-large">CIS</button>
+        </div>
+    </div>
+    <div class="row" style="position: relative;padding-top: 30px;">
+        <div class="span2 offset1">
+            <button class="btn btn-primary btn-block btn-large">Clusters</button>
+        </div>
+        
+    </div>
+</div>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="myModalLabel">login</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+	        <div class="control-group">
+	            <label class="control-label" for="inputId">Id</label>
+		        <div class="controls">
+		            <input type="text" id="inputId" placeholder="Id">
+		        </div>
+		    </div>
+	        <div class="control-group">
+		        <label class="control-label" for="inputPassword">Password</label>
+		        <div class="controls">
+		            <input type="password" class="input-large" id="inputPassword" placeholder="Password">
+		        </div>
+		    </div>
+	        <div class="control-group">
+	            <div class="controls">
+	                <button id='login' class="btn btn-primary">Login</button>
+	            </div>
+	        </div>
+	    </form>
+    </div>
+           
+</div>
+   
+</body>
+</html>
