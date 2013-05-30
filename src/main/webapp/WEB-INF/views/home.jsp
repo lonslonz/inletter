@@ -109,7 +109,7 @@
 	        <ul>
 	        <li><a href="#home" data-transition="slide" class="ui-btn-active ui-state-persist">홈</a></li>
 	        <li><a href="#letter" data-transition="slide">청첩장</a></li>
-	        <li><a href="location" data-transition="slide">위치</a></li>
+	        <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
 	        <li><a href="#gallery" data-transition="slide">사진</a></li>
 	        <li><a href="#comment" data-transition="slide" >드리는말씀</a></li>
 	        </ul>
@@ -129,7 +129,7 @@
             <ul>
             <li><a href="#home" data-transition="slide">홈</a></li>
             <li><a href="#letter" data-transition="slide"  class="ui-btn-active ui-state-persist">청첩장</a></li>
-            <li><a href="#location" data-transition="slide">위치</a></li>
+            <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
             <li><a href="#gallery" data-transition="slide">사진</a></li>
             <li><a href="#comment" data-transition="slide" >드리는말씀</a></li>
             </ul>
@@ -149,7 +149,7 @@
             <ul>
             <li><a href="#home" data-transition="slide">홈</a></li>
             <li><a href="#letter" data-transition="slide" >청첩장</a></li>
-            <li><a href="#location" data-transition="slide">위치</a></li>
+            <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
             <li><a href="#gallery" data-transition="slide"  class="ui-btn-active ui-state-persist">사진</a></li>
             <li><a href="#comment" data-transition="slide" >드리는말씀</a></li>
             </ul>
@@ -169,7 +169,7 @@
             <ul>
             <li><a href="#home" data-transition="slide">홈</a></li>
             <li><a href="#letter" data-transition="slide" >청첩장</a></li>
-            <li><a href="#location" data-transition="slide">위치</a></li>
+            <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
             <li><a href="#gallery" data-transition="slide" >사진</a></li>
             <li><a href="#comment" data-transition="slide"  class="ui-btn-active ui-state-persist">드리는말씀</a></li>
             </ul>

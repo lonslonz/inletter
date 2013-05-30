@@ -58,11 +58,11 @@
     <div data-role="header" data-id="nh" data-position="fixed" >
         <div data-role="navbar">
             <ul>
-            <li><a href="." data-transition="slide">홈</a></li>
-            <li><a href="home" data-transition="slide"  >청첩장</a></li>
+            <li><a href="home#home" data-transition="slide" rel="external" or data-ajax="false" >홈</a></li>
+            <li><a href="home#letter" data-transition="slide" rel="external" or data-ajax="false" >청첩장</a></li>
             <li><a href="#location" data-transition="slide" class="ui-btn-active ui-state-persist">위치</a></li>
-            <li><a href="home" data-transition="slide">사진</a></li>
-            <li><a href="home" data-transition="slide" >드리는말씀</a></li>
+            <li><a href="home#gallery" data-transition="slide" rel="external" or data-ajax="false" >사진</a></li>
+            <li><a href="home#comment" data-transition="slide" rel="external" or data-ajax="false" >드리는말씀</a></li>
             </ul>
         </div>
     </div>

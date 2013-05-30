@@ -23,10 +23,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-
-import com.skplanet.postino.service.model.WfRequest;
-
-
 /**
  * Handles requests for the application home page.
  */
@@ -43,6 +39,11 @@ public class HomeController {
 		
 		return "home";
 	}
+	@RequestMapping(value = "home", method = RequestMethod.GET)
+    public String home2(Locale locale, Model model) {
+        
+        return "home";
+    }
 	@RequestMapping(value = "boot", method = RequestMethod.GET)
     public String boot(Locale locale, Model model) {
         
