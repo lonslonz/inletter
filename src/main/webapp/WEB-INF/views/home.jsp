@@ -3,103 +3,39 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <html>
 <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-
+<!--
+ <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+-->
     <title>Invitation Letter</title>
     <link href="resources/css/jquery.mobile-1.3.1.min.css" rel="stylesheet" >
+    <link href="resources/css/jquery-mobile.css" type="text/css" rel="stylesheet" />
+    <link href="resources/css/photoswipe.css" type="text/css" rel="stylesheet" />
     <style type="text/css">
         html { height: 100% }
         body { height: 100%; margin: 0; padding: 0 }
         #map_canvas { height: 100%; }
-        .notdr {draggable:false;}
         #currImage {draggable:false; height:100%; width:100%;}
-        img {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-      .unselectable {
-    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
-    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
-    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
-    -webkit-user-select: none;
-    -ms-user-select: none; /* From IE10 only */
-    user-select: none; /* Not valid CSS yet, as of July 2012 */
-
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
-    user-drag: none;
-}
     </style>
-     
-    <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDMezNwEHSR69SfL24dcf-u44imzVue2B0&sensor=true">
+    
+    <script type="text/javascript" src="resources/js/klass.min.js"></script>
+    <script src="resources/js/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript">
+//$(document).bind('mobileinit', function(){
+  //$.extend(  $.mobile , {
+  //  metaViewportContent: 'width=device-width, initial-scale=2, minimum-scale=2, maximum-scale=2, user-scalable=yes'; 
+  //});
+ //  $.mobile.metaViewportContent = "width=device-width, minimum-scale=1, maximum-scale=2";
+//});
+    </script>
+    <script src="resources/js/jquery.mobile-1.3.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=yes, maximum-scale=4" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <script type="text/javascript">
     </script>
     
-    <script src="resources/js/jquery-1.10.0.min.js"></script>
-    <script src="resources/js/jquery.mobile-1.3.1.min.js"></script>
-    <script type="text/javascript">
-      
-    $(function(){
-        $("#images").bind("swipeleft",function(){   
-        	
-        	var current = $("#currImage").attr("src");
-        	console.log('current:' + current);
-        	var words = current.split("_");
-        	var num = words[1];
-        	console.log('num:' + num);
-        	
-        	if(num >= 2) {
-        	   var newnum = num - 1;
-        	
-        	   $("#currImage").attr("src", "resources/img/image_" + newnum);
-        	   $("#currImage").addClass("unselectable");
-        	   console.log("current : " + "resources/img/image_" + newnum);
-        	   console.log('left');
-        	}
-        });
-        $("#images").bind("swiperight",function(){
-        	var current = $("#currImage").attr("src");
-            console.log('current:' + current);
-            var words = current.split("_");
-            var num = words[1];
-            console.log('num:' + num);
-            
-            if(num <= 10) {
-               var newnum = num + 1;
-               $("#currImage").addClass("unselectable");
-               $("#currImage").attr("src", "resources/img/image_" + newnum);
-               $("#currImage").attr("unselectable", "on");
-               $("#currImage").attr("draggable", "false");
-               console.log("current : " + "resources/img/image_" + newnum);
-               console.log('left');
-            }
-            console.log('right');
-        });
-        
-    });
-    
-    function initialize() {
-        var latLng = new google.maps.LatLng(37.50549420, 127.0067190);
-        var mapOptions = {
-            center: latLng,
-            zoom: 16,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            streetViewControl: true
-            };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-      
-        var marker = new google.maps.Marker({
-            position: latLng,
-            map: map,
-            title: 'Here it is.'});
-    }
-    
-
-    
-  </script>
 </head>
 <body onload="initialize()">
 
@@ -109,9 +45,9 @@
 	        <ul>
 	        <li><a href="#home" data-transition="slide" class="ui-btn-active ui-state-persist">홈</a></li>
 	        <li><a href="#letter" data-transition="slide">청첩장</a></li>
-	        <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
-	        <li><a href="#gallery" data-transition="slide">사진</a></li>
-	        <li><a href="#comment" data-transition="slide" >드리는말씀</a></li>
+	        <li><a href="location" data-transition="slide" rel="external">위치</a></li>
+	        <li><a href="gallery" data-transition="slide" rel="external">사진</a></li>
+	        <li><a href="#comment" data-transition="slide" >about</a></li>
 	        </ul>
         </div>
     </div>
@@ -129,9 +65,9 @@
             <ul>
             <li><a href="#home" data-transition="slide">홈</a></li>
             <li><a href="#letter" data-transition="slide"  class="ui-btn-active ui-state-persist">청첩장</a></li>
-            <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
-            <li><a href="#gallery" data-transition="slide">사진</a></li>
-            <li><a href="#comment" data-transition="slide" >드리는말씀</a></li>
+            <li><a href="location" data-transition="slide" rel="external">위치</a></li>
+            <li><a href="gallery" data-transition="slide" rel="external">사진</a></li>
+            <li><a href="#comment" data-transition="slide" >about</a></li>
             </ul>
         </div>
     </div>
@@ -143,49 +79,81 @@
     <h1>강남고속터미널 (경부선) 5층/강남웨딩컨벤션 그랜드홀</h1>
     </div>
 </div>
-<div data-role="page" id="gallery" data-title="Gallery">
+<div data-role="page" id="gallery" data-title="Gallery" draggable="false">
     <div data-role="header" data-id="nh" data-position="fixed" >
         <div data-role="navbar">
             <ul>
             <li><a href="#home" data-transition="slide">홈</a></li>
             <li><a href="#letter" data-transition="slide" >청첩장</a></li>
-            <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
-            <li><a href="#gallery" data-transition="slide"  class="ui-btn-active ui-state-persist">사진</a></li>
-            <li><a href="#comment" data-transition="slide" >드리는말씀</a></li>
+            <li><a href="location" data-transition="slide" rel="external">위치</a></li>
+            <li><a href="gallery" data-transition="slide" rel="external">사진</a></li>
+            <li><a href="#comment" data-transition="slide" >about</a></li>
             </ul>
         </div>
     </div>
-    <div data-role="content" id="images">
-        <img id="currImage" draggable="false" unselectable="on" src="resources/img/image_1.jpg" width="100%" height="100%"/>
+    <div data-role="content" id="images" draggable="false">
+        <img id="currImage" draggable="false" unselectable="on" src="resources/img/image_1.jpg"/>
     </div>
     <div data-role="footer" data-position="fixed" data-id="nf">
     <h1>2013년 6월 16일(일) 오후 2:30</h1>
     <h1>강남고속터미널 (경부선) 5층/강남웨딩컨벤션 그랜드홀</h1>
     </div>
 </div>
-<div data-role="page" id="comment" data-title="Comment">
+<!-- <div data-role="page" id="comment" data-title="Comment" style="width: 100%; height:100%; background-image: url(resources/img/image_21.jpg);">
+ -->
+<div data-role="page" id="comment" data-title="Comment" data-theme="c">
     <div data-role="header" data-id="nh" data-position="fixed" >
         <div data-role="navbar">
             <ul>
             <li><a href="#home" data-transition="slide">홈</a></li>
             <li><a href="#letter" data-transition="slide" >청첩장</a></li>
-            <li><a href="location" data-transition="slide" rel="external" or data-ajax="false">위치</a></li>
-            <li><a href="#gallery" data-transition="slide" >사진</a></li>
-            <li><a href="#comment" data-transition="slide"  class="ui-btn-active ui-state-persist">드리는말씀</a></li>
+            <li><a href="location" data-transition="slide" rel="external">위치</a></li>
+            <li><a href="gallery" data-transition="slide" rel="external">사진</a></li>
+            <li><a href="#comment" data-transition="slide"  class="ui-btn-active ui-state-persist">about</a></li>
             </ul>
         </div>
     </div>
-    <div data-role="content" id="images">
-        <h1>진심으로 감사드립니다.</h1>
-        <br>
-        <h3>이종민 : 010-2728-1739</h3>
-        <h3>이정옥 : 010-9522-0629</h3> 
+    <div data-role="content" id="images" >
+        <div class="ui-body ui-body-e">
+            <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+                <h3>결혼식</h3>
+                <p>시간 : 6월 16일 일요일 2:30 분입니다. 현충일 다음주입니다.</p>
+                <p>위치 : 강남고속터미널 경부선 건물 5층에 있습니다. 강남웨딩켄벤션 그랜드홀입니다.(홀 2개가 있음)</p>
+                <p>찾기 : 지하철 강남고속터미널역에서 2번 출구로 오다보면 지하 1층에 경부선 엘리베이터가 있습니다. 에스컬레이터도 이용가능합니다.</p>
+            </div><!-- /collapsible -->
+            
+            <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+                <h3>신혼여행</h3>
+                <p>독일 3박, 프랑스 3박으로 6박 7일로 갑니다. ^^. </p>
+                <p>휴가 일정상 길게 잡지 못했습니다.</p>
+            </div><!-- /collapsible -->
+            
+            <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+                <h3>신혼집</h3>
+                <p>2호선 상왕십리역 근처입니다. </p>
+            </div>
+            <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+                <h3>직장</h3>
+                <p>이종민 : SK Planet 재직중입니다. 을지로에 있지만 올해말에 판교로 옮긴다고 합니다.</p>
+                <p>이정옥 : 삼성 카드 재직중입니다. 선릉역에 있습니다.</p>
+            </div>
+            <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+                <h3>연락처</h3>
+                <p>이종민 : 010-2728-1739</p>
+                <p>이정옥 : 010-9522-0629</p>
+            </div>
+            <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+                <h3>모바일 청첩장</h3>
+                <p>Jquery mobile 공부 겸 한번 만들어봤습니다. ^^;;</p>
+            </div>
+        </div><!-- /themed container -->
     </div>
     <div data-role="footer" data-position="fixed" data-id="nf">
     <h1>2013년 6월 16일(일) 오후 2:30</h1>
     <h1>강남고속터미널 (경부선) 5층/강남웨딩컨벤션 그랜드홀</h1>
     </div>
 </div>
+ 
  
 </body>
 </html>

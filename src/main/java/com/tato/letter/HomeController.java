@@ -44,6 +44,11 @@ public class HomeController {
         
         return "home";
     }
+	@RequestMapping(value = "gallery", method = RequestMethod.GET)
+    public String gallery(Locale locale, Model model) {
+        
+        return "gallery";
+    }
 	@RequestMapping(value = "boot", method = RequestMethod.GET)
     public String boot(Locale locale, Model model) {
         
@@ -61,5 +66,9 @@ public class HomeController {
 	@RequestMapping(value = "test2", method = RequestMethod.GET)
     public String test2(Locale locale, Model model) {
         return "test2";
+    }
+	@RequestMapping(value = "test3", method = RequestMethod.GET)
+    public String test3(Locale locale, Model model) {
+        return "test3";
     }  
 }
