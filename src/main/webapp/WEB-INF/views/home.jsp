@@ -144,7 +144,7 @@
             </div>
             <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
                 <h3>모바일 청첩장</h3>
-                <p>JQery mobile 공부 겸 한번 만들어봤습니다. ^^;;</p>
+                <p>JQuery mobile 공부 겸 한번 만들어봤습니다. ^^;;</p>
             </div>
         </div><!-- /themed container -->
     </div>
